@@ -36,12 +36,44 @@ function booksByAuthorsWithT(books) {
 }
 
 function booksAfter1992(books) {
+    let count = 0;
+    for (let book of books) {
+        if (book.publication_year > 1992) {
+            count++;
+        }
+    }
+    return count;
 }
 
 function booksBefore2004(books) {
+    let count = 0;
+    for (let book of books) {
+        if (book.publication_year < 2004) {
+            count++;
+        }
+    }
+    return count;
 }
 
 function isbnNumbersByAuthor(books, author) {
+}
+
+function booksAscendingAlphabeticallyByAuthor(books, author) {
+}
+
+function booksDescendingAlphabeticallyByAuthor(books, author) {
+}
+
+function booksAscendingChronologically(books) {
+}
+
+function booksDescendingChronologically(books) {
+}
+
+function booksGroupedByAuthorLastName(books) {
+}
+
+function booksGroupedByAuthorFirstName(books) {
 }
 
 
@@ -55,6 +87,8 @@ console.log("Here is the list of books starting with 'The'");
 console.log(booksStartingWithThe(books));
 console.log("Here is the list of books written by authors with 't' in their name");
 console.log(booksByAuthorsWithT(books));
+console.log("The number of books written after 1992 is " + booksAfter1992(books));
+console.log("The number of books written before 2004 is " + booksBefore2004(books));
 
 
 //#endregion
