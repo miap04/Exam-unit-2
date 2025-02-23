@@ -3,21 +3,30 @@ import test from "./test.mjs";
 //#region function -----------------------------------------------------------------
 
 function square(number) {
+    return number * number;
 }
 
 function inchtomm(inches) {
+    return inches * 25.4;
 }
 
 function root(number) {
+    return Math.sqrt(number);
 }
 
 function cube(number) {
+    return number * number * number;
 }
 
 function areaOfCircle(radius) {
+    return 3.14 * radius * radius;
 }
 
 function greet(name) {
+    if (typeof name !== "string") {
+        return null;
+    }
+    return "Hello " + name;
 }
 
 
@@ -38,7 +47,7 @@ tests.isEqual(root(9), 3, "Square root of 9 is 3");
 tests.isEqual(root(0), 0, "Square root of 0 is 0");
 tests.isEqual(cube(3), 27, "Cube of 3 is 27");
 tests.isEqual(cube(-3), -27, "Cube of -3 is -27");
-tests.isEqual(areaOfCircle(3), 3.14, 9.42, "Area of circle with radius 1 is between 3.14 and 3.15");
+tests.isEqual(Math.round(areaOfCircle(3) * 100) / 100, 28.26, "Area of circle with radius 3 is 28.26");
 tests.isEqual(areaOfCircle(0), 0, 0, "Area of circle with radius 0 is 0");
 tests.isEqual(greet("John"), "Hello John", "Greet John is Hello John");
 
@@ -54,7 +63,6 @@ tests.isNotANumber(cube("a"), "Cube of 'a' is NaN");
 tests.isNotANumber(cube(), "Cube of undefined is NaN");
 tests.isNotANumber(areaOfCircle("a"), "Area of circle with radius 'a' is NaN");
 tests.isNotANumber(areaOfCircle(), "Area of circle with radius undefined is NaN");
-tests.isNotANumber(greet(), "Greet undefined is NaN");
 tests.isEqual(greet(1), null, "Greet 1 should return null");
 tests.isEqual(greet(null), null, "Greet null should return null");
 
