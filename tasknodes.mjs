@@ -17,6 +17,18 @@ function calculateSum(node) {
 }
 
 function deepestLevel(node) {
+    if (!node) {
+        return NaN;
+    }
+    let left = 0;
+    let right = 0;
+    if (node.left) {
+        left = deepestLevel(node.left);
+    }
+    if (node.right) {
+        right = deepestLevel(node.right);
+    }
+    return Math.max(left, right) + 1;
 }
 
 function countNodes(node) {
