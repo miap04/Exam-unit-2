@@ -3,6 +3,17 @@ import test from "./test.mjs";
 //#region function -----------------------------------------------------------------
 
 function calculateSum(node) {
+    if (!node) {
+        return NaN;
+    }
+    let sum = node.value;
+    if (node.left) {
+        sum += calculateSum(node.left);
+    }
+    if (node.right) {
+        sum += calculateSum(node.right);
+    }
+    return sum;
 }
 
 function deepestLevel(node) {
