@@ -32,6 +32,17 @@ function deepestLevel(node) {
 }
 
 function countNodes(node) {
+    if (!node) {
+        return NaN;
+    }
+    let count = 1;
+    if (node.left) {
+        count += countNodes(node.left);
+    }
+    if (node.right) {
+        count += countNodes(node.right);
+    }
+    return count;
 }
 
 
