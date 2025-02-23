@@ -33,7 +33,7 @@ function greet(name) {
 //#endregion
 
 //#region Tests --------------------------------------------------------------------
-const tests = test("Sum function");
+const tests = test("Task Functions");
 
 
 // Valid inputs
