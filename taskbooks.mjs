@@ -56,6 +56,13 @@ function booksBefore2004(books) {
 }
 
 function isbnNumbersByAuthor(books, author) {
+    let isbnNumbers = [];
+    for (let book of books) {
+        if (book.author === author) {
+            isbnNumbers[isbnNumbers.length] = book.isbn;
+        }
+    }
+    return isbnNumbers;
 }
 
 function booksAscendingAlphabeticallyByAuthor(books, author) {
@@ -89,6 +96,7 @@ console.log("Here is the list of books written by authors with 't' in their name
 console.log(booksByAuthorsWithT(books));
 console.log("The number of books written after 1992 is " + booksAfter1992(books));
 console.log("The number of books written before 2004 is " + booksBefore2004(books));
-
+console.log("Here is the list of ISBN numbers for books written by 'John Scalzi'");
+console.log(isbnNumbersByAuthor(books, "John Scalzi"));
 
 //#endregion
